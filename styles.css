@@ -1,17 +1,17 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif; /* Modern font */
   line-height: 1.6;
-  background-color: #f4f4f4; /* Soft light grey background */
-  color: #333; /* Dark grey text for a refined look */
-  height: 100%; /* Ensure the body takes full height */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-color: #f8f9fa; /* Lighter background for a clean look */
+  color: #333;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .homepage {
-  background-color: #f4f4f4; /* Soft light grey for content */
-  min-height: 100vh; /* Ensure the homepage covers the entire viewport height */
+  background-color: #f8f9fa;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -21,14 +21,19 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: #2c6e49; /* Professional dark green background */
+  padding: 20px 40px; /* Increased padding */
+  background: linear-gradient(135deg, #2c6e49, #1a4d3e);
   color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .header .logo h1 {
   margin: 0;
-  font-size: 2rem; /* Slightly larger font for the logo */
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .navbar ul {
@@ -42,6 +47,7 @@ body {
   margin-left: 20px;
 }
 
+/* Original Navbar Button Effects (Unchanged) */
 .navbar ul li a {
   padding: 1.3em 3em;
   font-size: 12px;
@@ -49,18 +55,18 @@ body {
   letter-spacing: 2px;
   font-weight: 500;
   color: #fff;
-  background-color: #2c6e49; /* Matching navbar background color */
+  background-color: #2c6e49;
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
 }
 
 .navbar ul li a:hover {
-  background-color: #3a7a59; /* Slightly lighter green on hover */
+  background-color: #3a7a59;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
@@ -73,8 +79,8 @@ body {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  background: #1a4d3e; /* Deep green background for a professional feel */
+  padding: 120px 20px; /* Increased padding */
+  background: linear-gradient(135deg, #1a4d3e, #2c6e49);
   color: #fff;
   opacity: 0;
   transform: translateY(30px);
@@ -82,32 +88,38 @@ body {
 }
 
 .hero h2 {
-  font-size: 36px;
-  font-weight: 700; /* Bold text for a stronger statement */
+  font-size: 48px; /* Larger font size */
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .hero p {
-  margin: 20px 0;
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
 }
 
+/* Original CTA Button Effects (Unchanged) */
 .cta-button {
-  background: #4a7c4f; /* Muted green for call-to-action button */
+  background: #4a7c4f;
   color: #fff;
   padding: 10px 20px;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #3a653f; /* Darker green on hover */
+  background: #3a653f;
 }
 
 /* About Section */
 .about {
-  padding: 40px 20px;
-  background-color: #e2e8e1; /* Light grey-green background for a subtle, professional touch */
+  padding: 80px 20px;
+  background-color: #fff; /* White background for contrast */
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -115,14 +127,23 @@ body {
 }
 
 .about h2 {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 700;
-  color: #2c6e49; /* Dark green for headings */
+  color: #2c6e49;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #555;
+  line-height: 1.8;
 }
 
 /* Events Section */
 .events {
-  padding: 40px 20px;
+  padding: 80px 20px;
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -132,30 +153,30 @@ body {
 .event-list {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .event-card {
-  background: #f1f1f1; /* Soft, light background for event cards */
-  padding: 20px;
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 300px;
   text-align: left;
-  border-left: 4px solid #2c6e49; /* Subtle green accent */
+  border-left: 4px solid #2c6e49;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .event-card:hover {
-  transform: translateY(-10px); /* Lift the card slightly */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .event-card h3 {
   font-size: 24px;
   color: #2c6e49;
+  margin-bottom: 10px;
 }
 
 .event-card p {
@@ -165,8 +186,8 @@ body {
 
 /* Testimonials Section */
 .testimonials {
-  padding: 40px 20px;
-  background-color: #1a4d3e; /* Matching background with the general body */
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1a4d3e, #2c6e49);
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -174,21 +195,20 @@ body {
 }
 
 .testimonial-card {
-  background: #ffffff; /* Clean white background for testimonials */
-  padding: 20px;
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 500px;
-  margin: 10px auto;
+  margin: 0 auto;
   text-align: left;
-  border-left: 4px solid #2c6e49; /* Subtle green accent */
+  border-left: 4px solid #2c6e49;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
-  transform: translateY(-10px); /* Lift the card slightly */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-card p {
@@ -200,7 +220,7 @@ body {
 .footer {
   text-align: center;
   padding: 20px;
-  background: #2c6e49; /* Dark green background for footer */
+  background: #2c6e49;
   color: #fff;
 }
 
@@ -209,34 +229,49 @@ body {
   font-size: 14px;
 }
 
-/* Ensure responsive layout */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
   .event-list {
     flex-direction: column;
+    align-items: center;
   }
 
   .event-card,
   .testimonial-card {
     max-width: 100%;
   }
-
-  .navbar ul {
-    flex-direction: column;
-  }
 }
 
-/* Enable smooth scroll for the entire page */
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Fade-in effect */
+/* Fade-in Effect */
 .fade-in {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
-/* Set initial opacity to 0 and apply smooth transition */
 .fade {
   opacity: 0;
   transform: translateY(30px);
