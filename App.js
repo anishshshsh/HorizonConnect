@@ -1,14 +1,17 @@
-// File: App.js
 import React from "react";
-import HomePage from "./Homepage"; // Import the HomePage component
-import "./styles.css"; // Import the CSS file for styling
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./Homepage";  
+import AuthForm from "./AuthForm";  
+import "./styles.css";
+
 
 function App() {
   return (
-    <div className="App">
-      <HomePage /> {/* Render the homepage */}
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<AuthForm />} />
+    </Routes>
   );
-};
+}
 
 export default App;
