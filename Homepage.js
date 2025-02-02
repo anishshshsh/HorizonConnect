@@ -1,5 +1,5 @@
-// File: HomePage.js
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import "./styles.css"; // Link your CSS file here
 
 const Homepage = () => {
@@ -38,7 +38,7 @@ const Homepage = () => {
             <li><a href="#about">About</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#login">Login</a></li>
+            <li><Link to="/login">Login</Link></li>  {/* Updated Login Button */}
           </ul>
         </nav>
       </header>
