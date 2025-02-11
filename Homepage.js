@@ -1,27 +1,24 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
-import "./styles.css"; // Link your CSS file here
+import { Link } from "react-router-dom";
+import Search from "./Search"; // Import Search Component
+import "./styles.css"; // Your existing CSS
 
 const Homepage = () => {
   useEffect(() => {
-    // Intersection Observer to trigger fade-in animation on scroll
     const observer = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("fade-in");
-            observer.unobserve(entry.target); // Stop observing once the element is visible
+            observer.unobserve(entry.target);
           }
         });
       },
-      {
-        threshold: 0.5, // Trigger when 50% of the section is visible
-      }
+      { threshold: 0.5 }
     );
 
-    // Observing all sections with the 'fade' class
     const sections = document.querySelectorAll(".fade");
-    sections.forEach(section => {
+    sections.forEach((section) => {
       observer.observe(section);
     });
   }, []);
@@ -35,10 +32,11 @@ const Homepage = () => {
         </div>
         <nav className="navbar">
           <ul>
+            <li><Search /></li> {/* Search Bar */}
             <li><a href="#about">About</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><Link to="/login">Login</Link></li>  {/* Updated Login Button */}
+            <li><Link to="/login">Login</Link></li>
           </ul>
         </nav>
       </header>
