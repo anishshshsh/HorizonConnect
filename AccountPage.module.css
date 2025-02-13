@@ -1,0 +1,126 @@
+/* Dark Background */
+body {
+    background-color: #181818;
+    color: #a1b14c;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Account Page Layout */
+.accountPage {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #1c1c1c;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Back Button */
+.backButton {
+    background: none;
+    color: #76ff03;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.backButton:hover {
+    color: #a1b14c;
+}
+
+/* Profile Header */
+.profileHeader {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Profile Picture */
+.profilePicContainer {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #76ff03;
+    cursor: pointer;
+    position: relative;
+}
+.profilePic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profilePlaceholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #a1b14c;
+    font-size: 14px;
+}
+.profilePicContainer input {
+    display: none;
+}
+
+/* Profile Details */
+.profileDetails {
+    text-align: left;
+    max-width: 500px;
+}
+.profileDetails h1 {
+    margin: 5px 0;
+    color: #a1b14c;
+}
+
+/* Bio & Skills */
+.bio, .skills {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.bioInput, .skillsInput {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.bioInput:focus, .skillsInput:focus {
+    outline: 2px solid #76ff03;
+}
+
+/* Buttons */
+.editButton, .saveButton, .logoutButton {
+    background: #76ff03;
+    color: #1b1f1d;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.editButton:hover, .saveButton:hover {
+    background: #a1b14c;
+}
+.logoutButton {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+.logoutButton:hover {
+    background: #ff5252;
+}
+/* Profile Picture Input - Hidden */
+.profilePicInput {
+    display: none;
+}
