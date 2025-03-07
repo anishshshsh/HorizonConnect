@@ -1,19 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./Search.module.css"; // Use CSS Module for styles
+import { auth } from "./firebase"; // Import Firebase auth if using Firebase
+import styles from "./Search.module.css"; // Using CSS Modules
 
 export default function Search() {
   const [query, setQuery] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(null); // Initially null to prevent false redirects
   const navigate = useNavigate();
 
-  const handleSearch = () => {
-    const isLoggedIn = localStorage.getItem("user"); // Check if user is logged in
+  useEffect(() => {
+    // ✅ Check Firebase authentication status
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setIsLoggedIn(!!user); // Converts user object to boolean
+    });
 
-    if (!isLoggedIn) {
-      navigate("/login"); // Redirect to login if not authenticated
-    } else {
-      console.log("Searching for:", query);
-      // Implement search logic here
+    return () => unsubscribe(); // Cleanup on unmount
+  }, []);
+
+  const handleSearch = () => {
+    if (!query.trim()) return; // Prevent empty searches
+
+    if (isLoggedIn === false) {
+      navigate("/login"); // Redirect to login **only if explicitly logged out**
+    } else if (isLoggedIn === true) {
+      navigate(`/search-results?query=${encodeURIComponent(query)}`); // ✅ Navigate to search results
+    }
+  };
+
+  // Handle Enter key press for search
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
     }
   };
 
@@ -24,6 +41,7 @@ export default function Search() {
         placeholder="Search..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={handleKeyPress} // ✅ Trigger search on Enter key
         className={styles.searchInput}
       />
       <button onClick={handleSearch} className={styles.searchButton}>
