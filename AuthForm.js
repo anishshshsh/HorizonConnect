@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, db } from "./firebase"; // Import Firestore
+import { auth, db } from "./firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc, getDoc } from "firebase/firestore"; // Firestore functions
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import styles from "./AuthForm.module.css";
 
 export default function AuthForm() {
@@ -23,32 +23,18 @@ export default function AuthForm() {
     }
 
     try {
+      let userCredential;
       if (isLogin) {
-        // Login user
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-
-        // Check if user exists in Firestore
-        const userRef = doc(db, "users", user.uid);
-        const userSnap = await getDoc(userRef);
-        if (!userSnap.exists()) {
-          // Add user to Firestore if they don’t exist (fallback for older accounts)
-          await setDoc(userRef, { email, username: "New User" });
-        }
-
+        userCredential = await signInWithEmailAndPassword(auth, email, password);
       } else {
-        // Sign up user
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-
-        // Store user in Firestore
-        await setDoc(doc(db, "users", user.uid), {
+        userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await setDoc(doc(db, "users", userCredential.user.uid), {
           email,
-          username: "New User", // Default username
+          username: "New User",
         });
       }
 
-      navigate("/"); // Redirect after login/signup
+      navigate("/"); // Redirect after authentication
     } catch (err) {
       setError(err.message);
     }
@@ -56,6 +42,11 @@ export default function AuthForm() {
 
   return (
     <div className={styles.container}>
+      {/* ✅ Back to Home Button */}
+      <button className={styles.backButton} onClick={() => navigate("/")}>
+        ⬅ Back to Home
+      </button>
+
       <div className={styles.formContainer}>
         <div className={styles.formToggle}>
           <button className={isLogin ? styles.active : ""} onClick={() => setIsLogin(true)}>Login</button>
@@ -88,11 +79,10 @@ export default function AuthForm() {
             />
           )}
           <button type="submit">{isLogin ? "Login" : "Sign Up"}</button>
-          {isLogin ? (
-            <p>Not a Member? <a href="#" onClick={() => setIsLogin(false)}>Sign Up Now</a></p>
-          ) : (
-            <p>Already have an account? <a href="#" onClick={() => setIsLogin(true)}>Login</a></p>
-          )}
+          <p>
+            {isLogin ? "Not a Member?" : "Already have an account?"} 
+            <a href="#" onClick={() => setIsLogin(!isLogin)}> {isLogin ? "Sign Up Now" : "Login"}</a>
+          </p>
         </form>
       </div>
     </div>
