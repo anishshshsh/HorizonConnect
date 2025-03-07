@@ -1,7 +1,7 @@
 /* Dark Background */
 body {
     background-color: #181818;
-    color: #a1b14c;
+    color: #56d0ec;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -19,7 +19,7 @@ body {
 /* Back Button */
 .backButton {
     background: none;
-    color: #76ff03;
+    color: #48dd77;
     font-size: 18px;
     font-weight: bold;
     border: none;
@@ -27,7 +27,7 @@ body {
     margin-bottom: 15px;
 }
 .backButton:hover {
-    color: #a1b14c;
+    color: #5970e8;
 }
 
 /* Profile Header */
@@ -38,16 +38,22 @@ body {
     justify-content: center;
 }
 
-/* Profile Picture */
+/* Profile Picture Container */
 .profilePicContainer {
     width: 140px;
     height: 140px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #76ff03;
+    border: 3px solid #4398b4;
     cursor: pointer;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Center the container */
 }
+
+/* Profile Picture */
 .profilePic {
     width: 100%;
     height: 100%;
@@ -69,16 +75,17 @@ body {
 
 /* Profile Details */
 .profileDetails {
-    text-align: left;
+    text-align: center;
     max-width: 500px;
+    margin: 0 auto;
 }
 .profileDetails h1 {
     margin: 5px 0;
-    color: #a1b14c;
+    color: #5fb9da;
 }
 
-/* Bio & Skills */
-.bio, .skills {
+/* Bio, Skills, Batch & Job Experience */
+.bio, .skills, .batch, .jobExperience {
     background: rgba(255, 255, 255, 0.1);
     padding: 10px;
     border-radius: 5px;
@@ -94,7 +101,7 @@ body {
     border-radius: 5px;
 }
 .bioInput:focus, .skillsInput:focus {
-    outline: 2px solid #76ff03;
+    outline: 2px solid #5ca9eb;
 }
 
 /* Buttons */
@@ -110,7 +117,7 @@ body {
     transition: 0.3s;
 }
 .editButton:hover, .saveButton:hover {
-    background: #a1b14c;
+    background: #51a5e6;
 }
 .logoutButton {
     display: block;
@@ -120,7 +127,18 @@ body {
 .logoutButton:hover {
     background: #ff5252;
 }
+
 /* Profile Picture Input - Hidden */
 .profilePicInput {
     display: none;
+}
+
+/* Profile Picture Centered */
+.profilePicCentered {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 140px; /* Instagram-like size */
+    height: 140px;
+    object-fit: cover;
 }
