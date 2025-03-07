@@ -1,0 +1,83 @@
+.searchResultsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: black; /* ✅ Background stays black */
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+  }
+  
+  /* ✅ Back to Home Button - Now in Top Left */
+  .backButton {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .backButton:hover {
+    background: #72ebab;
+  }
+  
+  /* ✅ User List Styling */
+  .userList {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* ✅ Green User Boxes */
+  .resultItem {
+    background: #4caf50;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+  }
+  
+  .resultItem:hover {
+    background: #388e3c;
+  }
+  
+  .profilePic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .userDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .userName {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .userBio {
+    font-size: 14px;
+  }
+  
+  .noResults {
+    font-size: 16px;
+    color: gray;
+    margin-top: 20px;
+  }
+  
