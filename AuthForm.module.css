@@ -76,3 +76,21 @@
   .form p {
     text-align: center;
   }
+  .backButton {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: white;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .backButton:hover {
+    background: #6dbef0;
+  }
+  
