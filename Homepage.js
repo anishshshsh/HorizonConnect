@@ -31,7 +31,7 @@ const HomePage = ({ user }) => {
     return () => observer.disconnect(); // Cleanup on unmount
   }, []);
 
-  // ✅ Fetch Events from Firestore (optional)
+  // Fetch Events from Firestore 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
@@ -46,7 +46,7 @@ const HomePage = ({ user }) => {
     fetchEvents();
   }, []);
 
-  // ✅ Navigation function for Account button
+  //  Navigation function for Account button
   const handleAccountClick = () => navigate(user ? "/account" : "/login");
 
   return (
@@ -60,7 +60,7 @@ const HomePage = ({ user }) => {
           <ul>
             <li><Search user={user} /></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#events">Events</a></li>
+            <li><Link to="/events">Events</Link></li> {/* ✅ Redirects to Events page */}
             <li><a href="#testimonials">Testimonials</a></li>
             <li><button onClick={handleAccountClick} className="accountButton">Account</button></li>
           </ul>
@@ -80,15 +80,14 @@ const HomePage = ({ user }) => {
         <p>HorizonConnect is the exclusive alumni network of NHITM...</p>
       </section>
 
-      {/* Events Section (Now Dynamic) */}
+      {/* Events Section (Floating Cards, Max 4) */}
       <section id="events" className="events fade">
         <h2>Upcoming Events</h2>
         <div className="event-list">
           {events.length > 0 ? (
-            events.map(event => (
-              <div key={event.id} className="event-card">
+            events.slice(0, 4).map(event => ( // ✅ Only show 4 events
+              <div key={event.id} className="event-card floating"> 
                 <h3>{event.title}</h3>
-                <p>Date: {event.date}</p>
               </div>
             ))
           ) : (
