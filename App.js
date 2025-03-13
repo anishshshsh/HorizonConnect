@@ -5,6 +5,7 @@ import HomePage from "./Homepage";
 import AuthForm from "./AuthForm";  
 import Account from "./AccountPage";  
 import SearchResults from "./SearchResults"; // ✅ Import SearchResults
+import Events from "./Events";
 import "./styles.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Route path="/login" element={<AuthForm />} />
       <Route path="/account" element={<Account user={user} />} />
       <Route path="/search-results" element={<SearchResults />} /> {/* ✅ Add this */}
+      <Route path="/events" element={<Events />} />
     </Routes>
   );
 }
