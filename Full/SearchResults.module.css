@@ -1,0 +1,117 @@
+/* ✅ Container Styling */
+.searchResultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #18230F;
+  font-family: "Poppins", Arial, sans-serif;
+  min-height: 100vh;
+  color: white;
+  position: relative;
+}
+
+/* ✅ Back Button */
+.backButton {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #255F38;
+  color: rgb(148, 234, 205);
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.backButton:hover {
+  background: #ca7777;
+  transform: scale(1.0);
+}
+
+/* ✅ User List */
+.userList {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ✅ User Result Item (Fixed Size for Consistency) */
+.resultItem {
+  background: linear-gradient(135deg, #1F7D53, #1F7D53);
+  color: white;
+  padding: 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 3px 3px 15px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  gap: 15px;
+  height: 90px; /* ✅ FIXED HEIGHT */
+  overflow: hidden;
+}
+
+.resultItem:hover {
+  background: linear-gradient(135deg, #7edd83, #49ab4f);
+  transform: translateY(-3px);
+}
+
+/* ✅ Profile Picture */
+.profilePic {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0px 3px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ User Details */
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ✅ Centers text */
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ✅ User Name */
+.userName {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ✅ User Bio (Always Stays Inside the Box) */
+.userBio {
+  font-size: 14px;
+  opacity: 0.85;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+    
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* ✅ Limits to 2 lines */
+}
+  
+
+/* ✅ No Results */
+.noResults {
+  font-size: 16px;
+  color: #bbb;
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+}

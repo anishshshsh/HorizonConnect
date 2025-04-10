@@ -1,0 +1,156 @@
+/* AuthForm.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 105vh;
+  width: 100%;
+  background-image: url('/public/bluLogwp.jpg'); /* Adjust path if image is in another folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.formContainer {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+}
+
+.formToggle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.formToggle button {
+  width: 50%;
+  padding: 10px;
+  background-color: #c8d5e6;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px 10px 0 0;
+  transition: background-color 0.3s;
+}
+
+.formToggle .active {
+  background-color: #3461dc;
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form h2 {
+  margin-bottom: 10px;
+  color: #3461dc;
+  text-align: center;
+}
+
+.form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form button {
+  padding: 10px;
+  background-color: #3461dc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.form button:hover {
+  background-color: #2b52b2;
+}
+
+.form a {
+  color: #3461dc;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: right;
+}
+
+.form a:hover {
+  text-decoration: underline;
+}
+
+.form p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.backButton {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: white;
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.backButton:hover {
+  background: #6dbef0;
+}
+
+.requestCodeButton {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #6dbef0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.requestCodeButton:hover {
+  background-color: #3461dc;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accessCodeLink {
+  color: #3461dc;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.accessCodeLink:hover {
+  text-decoration: underline;
+}
+
+/* Optional: Error message styling */
+.error {
+  color: red;
+  font-size: 13px;
+  text-align: center;
+  margin: -5px 0 5px 0;
+}

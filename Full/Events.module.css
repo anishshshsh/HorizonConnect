@@ -1,0 +1,183 @@
+/* Events Page */
+.eventsPage {
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  background: #222831; /* Dark Gray */
+  color: #EEEEEE; /* Light Text */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Back Button */
+.backButton {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 10px 15px;
+  background: #00ADB5; /* Teal */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.backButton:hover {
+  background: #007a85; /* Darker teal on hover */
+}
+
+/* Event List */
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px; /* Keep events centered */
+}
+
+/* Event Card */
+.eventCard {
+  background: #393E46; /* Softer Gray */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.eventContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px; /* Helps space comment section */
+}
+
+.eventCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 15px rgba(0, 173, 181, 0.3); /* Teal glow */
+}
+
+/* Headings */
+h2,
+h3 {
+  color: #e95b5b;
+}
+
+p {
+  color: #ffffff;
+}
+
+/* 💖 Animated Like Button */
+.animatedLikeBtn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.animatedLikeBtn:hover {
+  transform: scale(1.2);
+}
+
+.animatedLikeBtn.liked {
+  animation: pop 0.3s ease forwards;
+  color: #e25555;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+  transition: fill 0.2s ease;
+}
+
+/* 🔢 Like Counter */
+.likeCounter {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 20px;
+  color: #ffffff;
+}
+.bookmarkBtn {
+  width: 130px;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  background-color: #222831;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.062);
+  margin-top: 10px;
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background-color: #393E46;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  transition-duration: 0.3s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 120px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.3s;
+}

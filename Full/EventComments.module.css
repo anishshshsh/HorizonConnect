@@ -1,0 +1,188 @@
+/* EventComments css */
+.commentSectionContainer {
+  margin-top: 1rem;
+}
+
+.commentInputContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.commentInputContainer input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #393E46;
+  color: #EEEEEE;
+  transition: 0.2s ease;
+}
+
+.commentInputContainer input::placeholder {
+  color: #AAA;
+}
+
+.commentInputContainer input:focus {
+  border: 1px solid #00ADB5;
+}
+
+.commentInputContainer button {
+  padding: 10px 14px;
+  background: #00ADB5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.commentInputContainer button:disabled {
+  background: #777;
+  cursor: not-allowed;
+}
+
+.commentInputContainer button:hover:not(:disabled) {
+  background: #007a85;
+}
+
+.commentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.singleComment {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: #30353b;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.commentAvatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.singleComment .content {
+  flex: 1;
+}
+
+.singleComment strong {
+  color: #EEEEEE;
+}
+
+.singleComment p {
+  margin: 3px 0 5px;
+  color: #D1D1D1;
+}
+.commentToggleButton {
+  background: none;
+  border: none;
+  color: #00ADB5;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.commentToggleButton:hover {
+  color: #00cdd1;
+}
+
+.interactionRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.likeButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.likeButton:hover {
+  transform: scale(1.1);
+}
+
+.liked {
+  color: #e95b5b;
+}
+
+.likeCount {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.bookmarkBtn {
+  width: 130px;
+  height: 40px;
+  border-radius: 40px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.062);
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background-color: #222831;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(26, 26, 26);
+  z-index: 1;
+  transition-duration: 0.3s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 120px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.3s;
+}

@@ -1,0 +1,218 @@
+/* Root Theme Setup */
+:root {
+    --bg-main: #B03052;
+    --text-main: #3D0301;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --button-bg: #3D0301;
+    --button-text: #FFC7C7;
+    --button-hover: #51a5e6;
+    --logout-hover: #ff5252;
+  }
+  
+  /* Light Theme */
+  .light {
+    --bg-main: #B03052;
+    --text-main: #3D0301;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --button-bg: #3D0301;
+    --button-text: #FFC7C7;
+    --button-hover: #51a5e6;
+    --logout-hover: #ff5252;
+  
+    background-color: white;
+    color: #3D0301;
+  }
+  
+  /* Dark Theme */
+  .dark {
+    --bg-main: #1D1616;
+    --text-main: #EEEEEE;
+    --card-bg: #2c1f1f;
+    --button-bg: #8E1616;
+    --button-text: #EEEEEE;
+    --button-hover: #D84040;
+    --logout-hover: #e57373;
+  
+    background-color: #121212;
+    color: #EEEEEE;
+  }
+  
+  /* General Styles */
+  body {
+    background-color: white;
+    color: #211d1d;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Wrapper for Theme */
+  .accountWrapper {
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Account Page Container */
+  .accountPage {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--bg-main);
+    border-radius: 12px;
+    box-shadow: 10px 4px 20px rgba(212, 233, 173, 0.91);
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Back Button */
+  .backButton {
+    background: none;
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  .backButton:hover {
+    color: #f4dbf5;
+  }
+  
+  /* Theme Toggle */
+  .themeToggleContainer {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 999;
+  }
+  
+  .themeToggle {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  .themeToggle:hover {
+    background: #555;
+  }
+  
+  /* Profile Picture */
+  .profilePicContainer {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #FFC7C7;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .profilePicCentered {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+  }
+  
+  .profilePicInput {
+    display: none;
+  }
+  
+  /* Profile Details */
+  .profileDetailsCentered {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Input Fields */
+  .inputField {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 16px;
+  }
+  .inputField:focus {
+    outline: 2px solid #FFC7C7;
+  }
+  
+  /* Buttons */
+  .editButton,
+  .saveButton,
+  .logoutButton {
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .editButton:hover,
+  .saveButton:hover {
+    background: var(--button-hover);
+  }
+  
+  .logoutButton {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .logoutButton:hover {
+    background: var(--logout-hover);
+  }
+  
+  /* Input & Button Dark Mode Overrides */
+  .dark input,
+  .dark textarea {
+    background-color: #1f1f1f;
+    color: #fff;
+    border: 1px solid #444;
+  }
+  
+  .dark .editButton,
+  .dark .logoutButton,
+  .dark .saveButton,
+  .dark .backButton {
+    background-color: #292929;
+    color: #fff;
+    border: 1px solid #555;
+  }
+  
+  /* Body + Wrapper Light/Dark Overrides */
+  .light body {
+    background-color: white;
+    color: #3D0301;
+  }
+  
+  .dark body {
+    background-color: #121212;
+    color: #EEEEEE;
+  }
+  
+  .light .accountWrapper {
+    background-color: white;
+    color: #3D0301;
+  }
+  
+  .dark .accountWrapper {
+    background-color: #121212;
+    color: #EEEEEE;
+  }
