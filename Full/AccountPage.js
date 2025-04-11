@@ -6,8 +6,8 @@ import axios from "axios";
 import styles from "./AccountPage.module.css";
 import UserInfoCard from "./UserInfoCard";
 
-const CLOUDINARY_UPLOAD_URL = "https://api.cloudinary.com/v1_1/dtjlslw0s/image/upload";
-const CLOUDINARY_UPLOAD_PRESET = "ml_default";
+//const CLOUDINARY_UPLOAD_URL 
+//const CLOUDINARY_UPLOAD_PRESET 
 
 const AccountPage = ({ user }) => {
   const navigate = useNavigate();
